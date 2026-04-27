@@ -116,7 +116,7 @@ while True:
                                            else :
                                            print ('please enter a valid input')
                 except ValueError
-                    print'Invalid input , please enter a number')
+                    print('Invalid input , please enter a number')
 
 
        
