@@ -14,15 +14,6 @@ def save_Active_Users(Active_User_List):
      except: Exception as e:
         print (f"Error saving products: {e}")
 
-def save_products(Active_User_List):
-    #Save products back to Products.txt file
-    try:
-        with open('Products.txt', 'w') as file:
-            for product in products:
-                file.write(product + '\n')
-    except Exception as e:
-        print(f"Error saving products: {e}")
-
 
 Disabled_User_List =[]
 try:
@@ -97,7 +88,36 @@ while True:
             User_choice = input ("please select the choice to view active or disabled list")
             if user_input_3 == 1:
                  print("please select the index of the user you want to disable")
-                 
+                 if User_choice == 1:
+                print("please select the index of the user you want to disable")
+                try:
+                   for (index,Active_user) in enumerate (Active_User_List):
+                      print (index, Active_user)
+                   delete_select_index = int(input ('please slect the index of what you user you want to disable'))
+                        if 0 <= delete_select_index < len(Active_User_List):
+                             Active_User_List.pop(delete_select_index)
+                             Disabled_User_List.append(delete_select_index)
+                             break
+                        else :
+                            print ('please enter a valid input')
+                except ValueError:
+                    print('Invalid input , please enter a number')
+                   
+            else User_choice == 2:
+                print("please select the index of the user you want to enable")
+                try:
+                   for (index,Disabled_user) in enumerate (Disabled_User_List):
+                      print (index, Disabled_user)
+                   delete_select_index = int(input ('please slect the index of what you user you want to enable')
+                                           if 0 <= delete_select_index < len(Disabled_User_List):
+                                           Disabled_User_List.pop(delete_select_index)
+                                           Active_User_List.append(delete_select_index)
+                                           break
+                                           else :
+                                           print ('please enter a valid input')
+                except ValueError
+                    print'Invalid input , please enter a number')
+
 
        
        
